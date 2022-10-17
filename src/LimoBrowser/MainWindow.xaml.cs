@@ -20,9 +20,24 @@ namespace LimoBrowser
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        public int leftmargin = 0;
+
         public MainWindow()
         {
             InitializeComponent();
+            addbtn.Margin = new Thickness(leftmargin, 0, 0, 0);
+        }
+        public void AddTabToTabcontrol(object sender, RoutedEventArgs e)
+        {
+            TabItem newtab = new TabItem();
+            TabWindow tab = new TabWindow();
+            newtab.Content = tab;
+            newtab.Header = "New tab";
+            newtab.Style = (Style)FindResource("tabStyle");
+            tabs.Items.Add(newtab);
+            leftmargin += 150;
+            addbtn.Margin = new Thickness(leftmargin, 0, 0, 0);
         }
     }
 }

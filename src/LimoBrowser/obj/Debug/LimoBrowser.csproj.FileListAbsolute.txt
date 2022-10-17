@@ -103,3 +103,6 @@ C:\Users\42060\Documents\GitHub\Limo-Browser-Chromium\src\LimoBrowser\obj\Debug\
 C:\Users\42060\Documents\GitHub\Limo-Browser-Chromium\src\LimoBrowser\obj\Debug\LimoBrowser.csproj.CopyComplete
 C:\Users\42060\Documents\GitHub\Limo-Browser-Chromium\src\LimoBrowser\obj\Debug\LimoBrowser.exe
 C:\Users\42060\Documents\GitHub\Limo-Browser-Chromium\src\LimoBrowser\obj\Debug\LimoBrowser.pdb
+C:\Users\42060\Documents\GitHub\Limo-Browser-Chromium\src\LimoBrowser\obj\Debug\TabWindow.g.cs
+C:\Users\42060\Documents\GitHub\Limo-Browser-Chromium\src\LimoBrowser\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\42060\Documents\GitHub\Limo-Browser-Chromium\src\LimoBrowser\obj\Debug\TabWindow.baml

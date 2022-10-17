@@ -9,41 +9,40 @@
         Title="MainWindow" WindowState="Maximized">
     <Window.Resources>
         <Style x:Key="tabStyle" TargetType="TabItem">
-            <Setter Property="Background" Value="DarkRed" />
-            <Setter Property="BorderBrush" Value="Red" />
-            <Setter Property="Height" Value="25px" />
+            <Setter Property="Height" Value="30px" />
             <Setter Property="Width" Value="75px" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="TabItem">
-                        <Border BorderBrush="Red" BorderThickness="1" CornerRadius="5" Background="BLack"></Border>
+                        <Border BorderBrush="Red" BorderThickness="1" CornerRadius="15" Background="DarkRed">
+                            <TextBlock Text="New Tab" FontSize="15px"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="addtabStyle" TargetType="TabItem">
+            <Setter Property="Height" Value="30px" />
+            <Setter Property="Width" Value="30px" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Button Click="AddTabToTabcontrol" Height="30px" Width="30px" Background="Transparent" BorderBrush="Transparent">
+                            <Border BorderBrush="Red" BorderThickness="1" CornerRadius="15" Background="DarkRed">
+                                <TextBlock Text="+" FontSize="15px" />
+                            </Border>
+                        </Button>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
     </Window.Resources>
     <Grid Background="DimGray">
-        <TabControl Background="Red">
+        <TabControl Background="Red" x:Name="tabs">
             <TabItem Header="New Tab" Style="{StaticResource tabStyle}">
-                <Grid>
-                    <wpf:ChromiumWebBrowser
-                        x:Name="Browser"
-                        Address="https://www.google.com"/>
-                </Grid>
+                <local:TabWindow/>
             </TabItem>
-            <TabItem Header="New Tab" Style="{StaticResource tabStyle}">
-                <Grid>
-                    <wpf:ChromiumWebBrowser
-                        x:Name="Browser1"
-                        Address="https://www.google.com"/>
-                </Grid>
-            </TabItem>
-            <TabItem Header="New Tab" Style="{StaticResource tabStyle}">
-                <Grid>
-                    <wpf:ChromiumWebBrowser
-                        x:Name="Browser2"
-                        Address="https://www.google.com"/>
-                </Grid>
+            <TabItem Style="{StaticResource addtabStyle}" x:Name="addbtn">
             </TabItem>
         </TabControl>
     </Grid>
