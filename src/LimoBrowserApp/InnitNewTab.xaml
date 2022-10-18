@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="LimoBrowserApp.InnitNewTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LimoBrowserApp"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel>
+        <Grid x:Name="navbar" Grid.Row="0" Background="OrangeRed" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="85px" />
+                <ColumnDefinition x:Name="def1" />
+                <ColumnDefinition Width="65px" />
+            </Grid.ColumnDefinitions>
+            <Button Background="White" BorderBrush="White" Height="20px" Width="75px" Margin="0, 0, 0, 0" Grid.Column="0">
+                <TextBlock Text="Bookmarks" />
+            </Button>
+            <TextBox x:Name="urlbar" Background="White" BorderBrush="White" Height="20px" Grid.Column="1">
+                
+            </TextBox>
+            <Button Background="White" BorderBrush="White" Height="20px" Width="50px" Grid.Column="2">
+                <TextBlock Text="Go" />
+            </Button>
+        </Grid>
+        <wpf:ChromiumWebBrowser
+            x:Name="www"
+            Address="https://www.google.com"
+            Grid.Row="1"/>
+    </StackPanel>
+</UserControl>

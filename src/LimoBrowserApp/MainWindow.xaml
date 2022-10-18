@@ -1,0 +1,48 @@
+﻿<Window x:Class="LimoBrowserApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LimoBrowserApp"
+        mc:Ignorable="d"
+        Title="LIMO Browser" WindowState="Maximized">
+    <Window.Resources>
+        <Style x:Key="tabStyle" TargetType="TabItem">
+            <Setter Property="Height" Value="30px" />
+            <Setter Property="Width" Value="75px" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Border BorderBrush="DarkRed" Background="DarkRed" BorderThickness="1" Height="30px" Width="75px" CornerRadius="15">
+                            <TextBlock Text="New Tab" FontSize="15px" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="addtabStyle" TargetType="TabItem">
+            <Setter Property="Height" Value="30px" />
+            <Setter Property="Width" Value="30px" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Border BorderBrush="DarkRed" Background="DarkRed" BorderThickness="1" Height="30px" Width="30px" CornerRadius="15">
+                            <Button Background="Transparent" BorderBrush="Transparent" Click="AddTabToTabControl">
+                                <TextBlock Text="+" FontSize="15px" />
+                            </Button>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Background="DarkGray">
+        <TabControl x:Name="tabs" Background="DimGray">
+            <TabItem Style="{StaticResource tabStyle}">
+                <local:InnitNewTab />
+            </TabItem>
+            <TabItem Style="{StaticResource addtabStyle}">
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

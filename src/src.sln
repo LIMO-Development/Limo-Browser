@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LimoBrowser", "LimoBrowser\LimoBrowser.csproj", "{20DF3E47-01E3-4F13-8C66-7ABE8546AD4A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LimoBrowserApp", "LimoBrowserApp\LimoBrowserApp.csproj", "{B8DA6AA2-E898-4793-9FAB-873383743FE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{20DF3E47-01E3-4F13-8C66-7ABE8546AD4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{20DF3E47-01E3-4F13-8C66-7ABE8546AD4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{20DF3E47-01E3-4F13-8C66-7ABE8546AD4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{20DF3E47-01E3-4F13-8C66-7ABE8546AD4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8DA6AA2-E898-4793-9FAB-873383743FE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8DA6AA2-E898-4793-9FAB-873383743FE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8DA6AA2-E898-4793-9FAB-873383743FE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8DA6AA2-E898-4793-9FAB-873383743FE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {1213FCD4-6B16-4284-A26E-C9A7C0EB3712}
+		SolutionGuid = {9986C8A6-054F-4ABE-BA8F-6CA01B85E90F}
 	EndGlobalSection
 EndGlobal
