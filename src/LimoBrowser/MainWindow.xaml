@@ -24,14 +24,31 @@
         <Style x:Key="addtabStyle" TargetType="TabItem">
             <Setter Property="Height" Value="30px" />
             <Setter Property="Width" Value="30px" />
+            <Setter Property="Margin" Value="5, 0, 0, 0" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="TabItem">
-                        <Button Click="AddTabToTabcontrol" Height="30px" Width="30px" Background="Transparent" BorderBrush="Transparent">
-                            <Border BorderBrush="Red" BorderThickness="1" CornerRadius="15" Background="DarkRed">
+                        <Border BorderBrush="Transparent" BorderThickness="1" CornerRadius="15" Background="Transparent" MouseEnter="HoverBackgroundOn" MouseLeave="HoverBackgroundOff">
+                            <Button Click="AddTabToTabcontrol" Height="30px" Width="30px" Background="Transparent" BorderBrush="Transparent">
                                 <TextBlock Text="+" FontSize="15px" />
-                            </Border>
-                        </Button>
+                            </Button>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="addtabHoverStyle" TargetType="TabItem">
+            <Setter Property="Height" Value="30px" />
+            <Setter Property="Width" Value="30px" />
+            <Setter Property="Margin" Value="5, 0, 0, 0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Border BorderBrush="DarkRed" BorderThickness="1" CornerRadius="15" Background="DarkRed">
+                            <Button Click="AddTabToTabcontrol" Height="30px" Width="30px" Background="Transparent" BorderBrush="Transparent">
+                                <TextBlock Text="+" FontSize="15px" />
+                            </Button>
+                        </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>

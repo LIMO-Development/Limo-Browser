@@ -37,7 +37,16 @@ namespace LimoBrowser
             newtab.Style = (Style)FindResource("tabStyle");
             tabs.Items.Add(newtab);
             leftmargin += 150;
-            addbtn.Margin = new Thickness(leftmargin, 0, 0, 0);
+        }
+
+        public void HoverBackgroundOn(object sender, RoutedEventArgs e)
+        {
+            addbtn.Style = (Style)FindResource("addtabHoverStyle");
+        }
+
+        public void HoverBackgroundOff(object sender, RoutedEventArgs e)
+        {
+            addbtn.Style = (Style)FindResource("addtabStyle");
         }
     }
 }
