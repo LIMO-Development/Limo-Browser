@@ -8,25 +8,33 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
-        <Grid x:Name="navbar" Grid.Row="0" Background="OrangeRed" VerticalAlignment="Stretch">
+        <Grid x:Name="navbar" Grid.Row="0" Background="DarkRed" VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="85px" />
                 <ColumnDefinition x:Name="def1" />
                 <ColumnDefinition Width="65px" />
             </Grid.ColumnDefinitions>
-            <Button Background="White" BorderBrush="White" Height="20px" Width="75px" Margin="0, 0, 0, 0" Grid.Column="0">
-                <TextBlock Text="Bookmarks" />
-            </Button>
-            <TextBox x:Name="urlbar" Background="White" BorderBrush="White" Height="20px" Grid.Column="1">
+            <TextBox x:Name="urlbar" Background="Red" BorderBrush="Red" Height="20px" Grid.Column="0">
                 
             </TextBox>
-            <Button Background="White" BorderBrush="White" Height="20px" Width="50px" Grid.Column="2">
+            <Button Background="Red" BorderBrush="Red" Height="20px" Width="50px" Grid.Column="1" Click="LoadCefSharpWebPage">
                 <TextBlock Text="Go" />
             </Button>
         </Grid>
-        <wpf:ChromiumWebBrowser
-            x:Name="www"
-            Address="https://www.google.com"
-            Grid.Row="1"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30" />
+                <ColumnDefinition x:Name="def2" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Background="DarkRed">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30px" />
+                    <RowDefinition Height="30px" />
+                </Grid.RowDefinitions>
+            </Grid>
+            <wpf:ChromiumWebBrowser
+                x:Name="www"
+                Address="https://www.google.com"
+                Grid.Row="1" Grid.Column="1"/>
+        </Grid>
     </StackPanel>
 </UserControl>

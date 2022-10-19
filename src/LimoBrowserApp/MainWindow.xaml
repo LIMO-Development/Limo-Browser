@@ -8,12 +8,12 @@
         Title="LIMO Browser" WindowState="Maximized">
     <Window.Resources>
         <Style x:Key="tabStyle" TargetType="TabItem">
-            <Setter Property="Height" Value="30px" />
+            <Setter Property="Height" Value="40px" />
             <Setter Property="Width" Value="75px" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="TabItem">
-                        <Border BorderBrush="DarkRed" Background="DarkRed" BorderThickness="1" Height="30px" Width="75px" CornerRadius="15">
+                        <Border BorderBrush="Red" Background="Red" BorderThickness="1" Height="30px" Width="75px" CornerRadius="15">
                             <TextBlock Text="New Tab" FontSize="15px" />
                         </Border>
                     </ControlTemplate>
@@ -26,7 +26,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="TabItem">
-                        <Border BorderBrush="DarkRed" Background="DarkRed" BorderThickness="1" Height="30px" Width="30px" CornerRadius="15">
+                        <Border BorderBrush="Red" Background="Red" BorderThickness="1" Height="30px" Width="30px" CornerRadius="15">
                             <Button Background="Transparent" BorderBrush="Transparent" Click="AddTabToTabControl">
                                 <TextBlock Text="+" FontSize="15px" />
                             </Button>
@@ -36,10 +36,10 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid Background="DarkGray">
-        <TabControl x:Name="tabs" Background="DimGray">
+    <Grid Background="DarkRed">
+        <TabControl x:Name="tabs" Background="Red">
             <TabItem Style="{StaticResource tabStyle}">
-                <local:InnitNewTab />
+                <local:InnitNewTab Grid.Row="1" />
             </TabItem>
             <TabItem Style="{StaticResource addtabStyle}">
             </TabItem>

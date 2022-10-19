@@ -33,5 +33,11 @@ namespace LimoBrowserApp
             newtab.Style = (Style)FindResource("tabStyle");
             tabs.Items.Add(newtab);
         }
+
+        public void TransparentAddTabButton(object sender, RoutedEventArgs e)
+        {
+            ((Button)sender).Background = Brushes.Transparent;
+            ((Button)sender).BorderBrush = Brushes.Transparent;
+        }
     }
 }

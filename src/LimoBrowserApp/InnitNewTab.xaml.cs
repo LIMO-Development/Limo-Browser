@@ -30,9 +30,38 @@ namespace LimoBrowserApp
         {
             navbar.Width = SystemParameters.PrimaryScreenWidth;
             navbar.Height = 30;
-            www.Height = (SystemParameters.PrimaryScreenHeight - 30) - 105;
-            def1.Width = new GridLength((SystemParameters.PrimaryScreenWidth - 85) - 65);
-            urlbar.Width = (SystemParameters.PrimaryScreenWidth - 85) - 65;
+            def2.Width = new GridLength(SystemParameters.PrimaryScreenWidth - 30);
+            www.Height = (SystemParameters.PrimaryScreenHeight - 60) - 105;
+            def1.Width = new GridLength(SystemParameters.PrimaryScreenWidth - 65);
+            urlbar.Width = SystemParameters.PrimaryScreenWidth - 75;
+        }
+
+        public void LoadCefSharpWebPage(object sender, RoutedEventArgs e)
+        {
+            if (urlbar.Text != null)
+            {
+                if (urlbar.Text.Contains(".") && !urlbar.Text.Contains(" "))
+                {
+                    www.Load("https://" + urlbar.Text);
+                } else
+                {
+                    www.Load("https://www.google.com/search?q=" + urlbar.Text);
+                }
+            }
+        }
+
+        public bool bookmarkShown = true;
+
+        public void ToggleBookmarks(object sender, RoutedEventArgs e)
+        {
+            switch (bookmarkShown)
+            {
+                case true:
+                    break;
+
+                case false:
+                    break;
+            }
         }
     }
 }
