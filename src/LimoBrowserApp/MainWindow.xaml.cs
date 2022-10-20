@@ -32,6 +32,7 @@ namespace LimoBrowserApp
             newtab.Content = tab;
             newtab.Style = (Style)FindResource("tabStyle");
             tabs.Items.Add(newtab);
+            tabs.SelectedIndex = tabs.SelectedIndex + 1;
         }
 
         public void TransparentAddTabButton(object sender, RoutedEventArgs e)

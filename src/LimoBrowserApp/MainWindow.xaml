@@ -14,7 +14,16 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="TabItem">
                         <Border BorderBrush="Red" Background="Red" BorderThickness="1" Height="30px" Width="75px" CornerRadius="15">
-                            <TextBlock Text="New Tab" FontSize="15px" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50px" />
+                                    <ColumnDefinition Width="20px" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="New Tab" FontSize="15px" Grid.Column="0"/>
+                                <Button Height="20px" Grid.Column="1" Background="Transparent" BorderBrush="Transparent">
+                                    <TextBlock Text="x" FontSize="10px" />
+                                </Button>
+                            </Grid>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>

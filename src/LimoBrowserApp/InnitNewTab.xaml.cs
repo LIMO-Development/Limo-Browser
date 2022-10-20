@@ -32,8 +32,8 @@ namespace LimoBrowserApp
             navbar.Height = 30;
             def2.Width = new GridLength(SystemParameters.PrimaryScreenWidth - 30);
             www.Height = (SystemParameters.PrimaryScreenHeight - 60) - 105;
-            def1.Width = new GridLength(SystemParameters.PrimaryScreenWidth - 65);
-            urlbar.Width = SystemParameters.PrimaryScreenWidth - 75;
+            def1.Width = new GridLength(SystemParameters.PrimaryScreenWidth - 130);
+            urlbar.Width = SystemParameters.PrimaryScreenWidth - 90;
         }
 
         public void LoadCefSharpWebPage(object sender, RoutedEventArgs e)
@@ -49,17 +49,37 @@ namespace LimoBrowserApp
                 }
             }
         }
+        
+        public bool settingsShown = false;
 
-        public bool bookmarkShown = true;
-
-        public void ToggleBookmarks(object sender, RoutedEventArgs e)
+        public void ToggleSettings(object sender, RoutedEventArgs e)
         {
-            switch (bookmarkShown)
+            switch (settingsShown)
             {
                 case true:
+                    browserGrid.ColumnDefinitions.RemoveAt(2);
+                    browserGrid.Children.RemoveAt(2);
+                    def2.Width = new GridLength(SystemParameters.PrimaryScreenWidth - 30);
+                    settingsShown = false;
                     break;
 
                 case false:
+                    // columns
+                    ColumnDefinition settingsdef = new ColumnDefinition();
+                    settingsdef.Width = new GridLength(100);
+                    browserGrid.ColumnDefinitions.Add(settingsdef);
+
+                    // initializer
+                    StackPanel settingspanel = new StackPanel();
+                    settingspanel.Background = Brushes.DarkRed;
+
+                    // adder
+                    browserGrid.Children.Add(settingspanel);
+
+                    // setter
+                    Grid.SetColumn(settingspanel, 2);
+                    def2.Width = new GridLength(SystemParameters.PrimaryScreenWidth - 130);
+                    settingsShown = true;
                     break;
             }
         }

@@ -12,6 +12,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition x:Name="def1" />
                 <ColumnDefinition Width="65px" />
+                <ColumnDefinition Width="65px" />
             </Grid.ColumnDefinitions>
             <TextBox x:Name="urlbar" Background="Red" BorderBrush="Red" Height="20px" Grid.Column="0">
                 
@@ -19,8 +20,11 @@
             <Button Background="Red" BorderBrush="Red" Height="20px" Width="50px" Grid.Column="1" Click="LoadCefSharpWebPage">
                 <TextBlock Text="Go" />
             </Button>
+            <Button Background="Red" BorderBrush="Red" Height="20px" Width="50px" Grid.Column="2" Click="ToggleSettings">
+                <TextBlock Text="S" />
+            </Button>
         </Grid>
-        <Grid>
+        <Grid x:Name="browserGrid">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="30" />
                 <ColumnDefinition x:Name="def2" />
