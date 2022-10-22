@@ -7,6 +7,22 @@
              xmlns:local="clr-namespace:LimoBrowserApp"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style x:Key="buttonBorderStyle" TargetType="Button">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </Style.Resources>
+        </Style>
+        <Style x:Key="textboxBorderStyle" TargetType="TextBox">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </Style.Resources>
+        </Style>
+    </UserControl.Resources>
     <StackPanel>
         <Grid x:Name="navbar" Grid.Row="0" Background="DarkRed" VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
@@ -14,13 +30,13 @@
                 <ColumnDefinition Width="65px" />
                 <ColumnDefinition Width="65px" />
             </Grid.ColumnDefinitions>
-            <TextBox x:Name="urlbar" Background="Red" BorderBrush="Red" Height="20px" Grid.Column="0">
+            <TextBox x:Name="urlbar" Background="Red" BorderBrush="Red" Height="20px" Grid.Column="0" Style="{StaticResource textboxBorderStyle}">
                 
             </TextBox>
-            <Button Background="Red" BorderBrush="Red" Height="20px" Width="50px" Grid.Column="1" Click="LoadCefSharpWebPage">
+            <Button x:Name="goButton" Background="Red" BorderBrush="Red" Height="20px" Width="50px" Grid.Column="1" Click="LoadCefSharpWebPage" Style="{StaticResource buttonBorderStyle}">
                 <TextBlock Text="Go" />
             </Button>
-            <Button Background="Red" BorderBrush="Red" Height="20px" Width="50px" Grid.Column="2" Click="ToggleSettings">
+            <Button x:Name="settingsButton" Background="Red" BorderBrush="Red" Height="20px" Width="50px" Grid.Column="2" Click="ToggleSettings" Style="{StaticResource buttonBorderStyle}">
                 <TextBlock Text="S" />
             </Button>
         </Grid>
@@ -29,7 +45,7 @@
                 <ColumnDefinition Width="30" />
                 <ColumnDefinition x:Name="def2" />
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0" Background="DarkRed">
+            <Grid Grid.Column="0" Background="DarkRed" x:Name="sidebar">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30px" />
                     <RowDefinition Height="30px" />

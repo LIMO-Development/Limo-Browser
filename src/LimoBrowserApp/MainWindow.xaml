@@ -7,13 +7,22 @@
         mc:Ignorable="d"
         Title="LIMO Browser" WindowState="Maximized">
     <Window.Resources>
+        <Style x:Key="tabsStyle" TargetType="TabControl">
+            <Setter Property="BorderBrush" Value="DimGray" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </Style.Resources>
+        </Style>
         <Style x:Key="tabStyle" TargetType="TabItem">
             <Setter Property="Height" Value="40px" />
             <Setter Property="Width" Value="75px" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="TabItem">
-                        <Border BorderBrush="Red" Background="Red" BorderThickness="1" Height="30px" Width="75px" CornerRadius="15">
+                        <Border BorderBrush="DimGray" Background="DimGray" BorderThickness="1" Height="30px" Width="75px" CornerRadius="15">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="50px" />
@@ -35,7 +44,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="TabItem">
-                        <Border BorderBrush="Red" Background="Red" BorderThickness="1" Height="30px" Width="30px" CornerRadius="15">
+                        <Border BorderBrush="DimGray" Background="DimGray" BorderThickness="1" Height="30px" Width="30px" CornerRadius="15">
                             <Button Background="Transparent" BorderBrush="Transparent" Click="AddTabToTabControl">
                                 <TextBlock Text="+" FontSize="15px" />
                             </Button>
@@ -45,12 +54,12 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid Background="DarkRed">
-        <TabControl x:Name="tabs" Background="Red">
-            <TabItem Style="{StaticResource tabStyle}">
+    <Grid Background="DarkRed" x:Name="allControls">
+        <TabControl x:Name="tabs" Background="Red" Style="{StaticResource tabsStyle}">
+            <TabItem Style="{StaticResource tabStyle}" x:Name="defaultNewtabTab">
                 <local:InnitNewTab Grid.Row="1" />
             </TabItem>
-            <TabItem Style="{StaticResource addtabStyle}">
+            <TabItem Style="{StaticResource addtabStyle}" x:Name="addtabTab">
             </TabItem>
         </TabControl>
     </Grid>
