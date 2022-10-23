@@ -8,8 +8,6 @@
         Title="LIMO Browser" WindowState="Maximized">
     <Window.Resources>
         <Style x:Key="tabsStyle" TargetType="TabControl">
-            <Setter Property="BorderBrush" Value="DimGray" />
-            <Setter Property="BorderThickness" Value="2" />
             <Style.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10" />
@@ -55,7 +53,7 @@
         </Style>
     </Window.Resources>
     <Grid Background="DarkRed" x:Name="allControls">
-        <TabControl x:Name="tabs" Background="Red" Style="{StaticResource tabsStyle}">
+        <TabControl x:Name="tabs" Background="Red" Style="{StaticResource tabsStyle}" BorderBrush="DimGray" BorderThickness="2">
             <TabItem Style="{StaticResource tabStyle}" x:Name="defaultNewtabTab">
                 <local:InnitNewTab Grid.Row="1" />
             </TabItem>

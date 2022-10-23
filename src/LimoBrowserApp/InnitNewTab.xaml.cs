@@ -244,6 +244,128 @@ namespace LimoBrowserApp
                                 settingsButton.Background = Brushes.Violet;
                                 settingsButton.BorderBrush = Brushes.Violet;
                                 break;
+
+                            // black background themes
+                            case "theme:blackred;":
+                                navbar.Background = Brushes.Black;
+                                urlbar.Background = Brushes.Red;
+                                urlbar.BorderBrush = Brushes.Red;
+                                sidebar.Background = Brushes.Black;
+                                goButton.Background = Brushes.Red;
+                                goButton.BorderBrush = Brushes.Red;
+                                settingsButton.Background = Brushes.Red;
+                                settingsButton.BorderBrush = Brushes.Red;
+                                break;
+
+                            case "theme:blackorange;":
+                                navbar.Background = Brushes.Black;
+                                urlbar.Background = Brushes.Orange;
+                                urlbar.BorderBrush = Brushes.Orange;
+                                sidebar.Background = Brushes.Black;
+                                goButton.Background = Brushes.Orange;
+                                goButton.BorderBrush = Brushes.Orange;
+                                settingsButton.Background = Brushes.Orange;
+                                settingsButton.BorderBrush = Brushes.Orange;
+                                break;
+
+                            case "theme:blackyellow;":
+                                navbar.Background = Brushes.Black;
+                                urlbar.Background = Brushes.Yellow;
+                                urlbar.BorderBrush = Brushes.Yellow;
+                                sidebar.Background = Brushes.Black;
+                                goButton.Background = Brushes.Yellow;
+                                goButton.BorderBrush = Brushes.Yellow;
+                                settingsButton.Background = Brushes.Yellow;
+                                settingsButton.BorderBrush = Brushes.Yellow;
+                                break;
+
+                            case "theme:blackyellowgreen;":
+                                navbar.Background = Brushes.Black;
+                                urlbar.Background = Brushes.YellowGreen;
+                                urlbar.BorderBrush = Brushes.YellowGreen;
+                                sidebar.Background = Brushes.Black;
+                                goButton.Background = Brushes.YellowGreen;
+                                goButton.BorderBrush = Brushes.YellowGreen;
+                                settingsButton.Background = Brushes.YellowGreen;
+                                settingsButton.BorderBrush = Brushes.YellowGreen;
+                                break;
+
+                            case "theme:blackgreen;":
+                                navbar.Background = Brushes.Black;
+                                urlbar.Background = Brushes.Lime;
+                                urlbar.BorderBrush = Brushes.Lime;
+                                sidebar.Background = Brushes.Black;
+                                goButton.Background = Brushes.Lime;
+                                goButton.BorderBrush = Brushes.Lime;
+                                settingsButton.Background = Brushes.Lime;
+                                settingsButton.BorderBrush = Brushes.Lime;
+                                break;
+
+                            case "theme:blackaquamarine;":
+                                navbar.Background = Brushes.Black;
+                                urlbar.Background = Brushes.Aquamarine;
+                                urlbar.BorderBrush = Brushes.Aquamarine;
+                                sidebar.Background = Brushes.Black;
+                                goButton.Background = Brushes.Aquamarine;
+                                goButton.BorderBrush = Brushes.Aquamarine;
+                                settingsButton.Background = Brushes.Aquamarine;
+                                settingsButton.BorderBrush = Brushes.Aquamarine;
+                                break;
+
+                            case "theme:blackcyan;":
+                                navbar.Background = Brushes.Black;
+                                urlbar.Background = Brushes.Cyan;
+                                urlbar.BorderBrush = Brushes.Cyan;
+                                sidebar.Background = Brushes.Black;
+                                goButton.Background = Brushes.Cyan;
+                                goButton.BorderBrush = Brushes.Cyan;
+                                settingsButton.Background = Brushes.Cyan;
+                                settingsButton.BorderBrush = Brushes.Cyan;
+                                break;
+
+                            case "theme:blacklightblue;":
+                                navbar.Background = Brushes.Black;
+                                urlbar.Background = Brushes.LightBlue;
+                                urlbar.BorderBrush = Brushes.LightBlue;
+                                sidebar.Background = Brushes.Black;
+                                goButton.Background = Brushes.LightBlue;
+                                goButton.BorderBrush = Brushes.LightBlue;
+                                settingsButton.Background = Brushes.LightBlue;
+                                settingsButton.BorderBrush = Brushes.LightBlue;
+                                break;
+
+                            case "theme:blackblue;":
+                                navbar.Background = Brushes.Black;
+                                urlbar.Background = Brushes.Blue;
+                                urlbar.BorderBrush = Brushes.Blue;
+                                sidebar.Background = Brushes.Black;
+                                goButton.Background = Brushes.Blue;
+                                goButton.BorderBrush = Brushes.Blue;
+                                settingsButton.Background = Brushes.Blue;
+                                settingsButton.BorderBrush = Brushes.Blue;
+                                break;
+
+                            case "theme:blackpurple;":
+                                navbar.Background = Brushes.Black;
+                                urlbar.Background = Brushes.Purple;
+                                urlbar.BorderBrush = Brushes.Purple;
+                                sidebar.Background = Brushes.Black;
+                                goButton.Background = Brushes.Purple;
+                                goButton.BorderBrush = Brushes.Purple;
+                                settingsButton.Background = Brushes.Purple;
+                                settingsButton.BorderBrush = Brushes.Purple;
+                                break;
+
+                            case "theme:blackpink;":
+                                navbar.Background = Brushes.Black;
+                                urlbar.Background = Brushes.Violet;
+                                urlbar.BorderBrush = Brushes.Violet;
+                                sidebar.Background = Brushes.Black;
+                                goButton.Background = Brushes.Violet;
+                                goButton.BorderBrush = Brushes.Violet;
+                                settingsButton.Background = Brushes.Violet;
+                                settingsButton.BorderBrush = Brushes.Violet;
+                                break;
                         }
                     }
                     break;

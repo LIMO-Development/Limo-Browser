@@ -160,6 +160,73 @@ namespace LimoBrowserApp
                         allControls.Background = Brushes.HotPink;
                         tabs.Background = Brushes.HotPink;
                         break;
+
+                    // black background themes
+                    case "theme:blackred;":
+                        allControls.Background = Brushes.Black;
+                        tabs.Background = Brushes.Black;
+                        tabs.BorderBrush = Brushes.Red;
+                        break;
+
+                    case "theme:blackorange;":
+                        allControls.Background = Brushes.Black;
+                        tabs.Background = Brushes.Black;
+                        tabs.BorderBrush = Brushes.Orange;
+                        break;
+
+                    case "theme:blackyellow;":
+                        allControls.Background = Brushes.Black;
+                        tabs.Background = Brushes.Black;
+                        tabs.BorderBrush = Brushes.Yellow;
+                        break;
+
+                    case "theme:blackyellowgreen;":
+                        allControls.Background = Brushes.Black;
+                        tabs.Background = Brushes.Black;
+                        tabs.BorderBrush = Brushes.YellowGreen;
+                        break;
+
+                    case "theme:blackgreen;":
+                        allControls.Background = Brushes.Black;
+                        tabs.Background = Brushes.Black;
+                        tabs.BorderBrush = Brushes.Lime;
+                        break;
+
+                    case "theme:blackaquamarine;":
+                        allControls.Background = Brushes.Black;
+                        tabs.Background = Brushes.Black;
+                        tabs.BorderBrush = Brushes.Aquamarine;
+                        break;
+
+                    case "theme:blackcyan;":
+                        allControls.Background = Brushes.Black;
+                        tabs.Background = Brushes.Black;
+                        tabs.BorderBrush = Brushes.Cyan;
+                        break;
+
+                    case "theme:blacklightblue;":
+                        allControls.Background = Brushes.Black;
+                        tabs.Background = Brushes.Black;
+                        tabs.BorderBrush = Brushes.LightBlue;
+                        break;
+
+                    case "theme:blackblue;":
+                        allControls.Background = Brushes.Black;
+                        tabs.Background = Brushes.Black;
+                        tabs.BorderBrush = Brushes.Blue;
+                        break;
+
+                    case "theme:blackpurple;":
+                        allControls.Background = Brushes.Black;
+                        tabs.Background = Brushes.Black;
+                        tabs.BorderBrush = Brushes.Purple;
+                        break;
+
+                    case "theme:blackpink;":
+                        allControls.Background = Brushes.Black;
+                        tabs.Background = Brushes.Black;
+                        tabs.BorderBrush = Brushes.Violet;
+                        break;
                 }
             }
         }
