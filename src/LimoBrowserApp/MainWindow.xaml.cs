@@ -239,7 +239,17 @@ namespace LimoBrowserApp
                     break;
 
                 case false:
-                    tabs.Items.RemoveAt(tabs.SelectedIndex);
+                    switch (tabs.SelectedIndex == 2)
+                    {
+                        case true:
+                            tabs.Items.RemoveAt(tabs.SelectedIndex);
+                            tabs.SelectedIndex = 0;
+                            break;
+
+                        case false:
+                            tabs.Items.RemoveAt(tabs.SelectedIndex);
+                            break;
+                    }
                     break;
             }
         }
