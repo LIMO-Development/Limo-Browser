@@ -29,7 +29,7 @@
                                     <ColumnDefinition Width="20px" />
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Text="New Tab" FontSize="15px" Grid.Column="0"/>
-                                <Button Height="20px" Grid.Column="1" Background="Transparent" BorderBrush="Transparent">
+                                <Button Height="20px" Grid.Column="1" Background="Transparent" BorderBrush="Transparent" Click="RemoveTabFromTabControl">
                                     <TextBlock Text="x" FontSize="10px" />
                                 </Button>
                             </Grid>

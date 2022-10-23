@@ -34,7 +34,17 @@ namespace LimoBrowserApp
             newtab.Content = tab;
             newtab.Style = (Style)FindResource("tabStyle");
             tabs.Items.Add(newtab);
-            tabs.SelectedIndex = tabs.SelectedIndex + 1;
+            switch (tabs.SelectedIndex == 0)
+            {
+                case true:
+                    tabs.SelectedIndex = 2;
+                    break;
+
+                case false:
+                    tabs.SelectedIndex = tabs.SelectedIndex + 1;
+                    break;
+            }
+            
         }
 
         public void TransparentAddTabButton(object sender, RoutedEventArgs e)
@@ -147,10 +157,23 @@ namespace LimoBrowserApp
                         break;
 
                     case "theme:pink;":
-                        allControls.Background = Brushes.Plum;
-                        tabs.Background = Brushes.Plum;
+                        allControls.Background = Brushes.HotPink;
+                        tabs.Background = Brushes.HotPink;
                         break;
                 }
+            }
+        }
+
+        public void RemoveTabFromTabControl(object sender, RoutedEventArgs e)
+        {
+            switch (tabs.SelectedIndex == 1 || tabs.SelectedIndex == 0)
+            {
+                case true:
+                    break;
+
+                case false:
+                    tabs.Items.RemoveAt(tabs.SelectedIndex);
+                    break;
             }
         }
     }

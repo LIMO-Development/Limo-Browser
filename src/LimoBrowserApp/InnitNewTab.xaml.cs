@@ -235,14 +235,14 @@ namespace LimoBrowserApp
                                 break;
 
                             case "theme:pink;":
-                                navbar.Background = Brushes.Plum;
-                                urlbar.Background = Brushes.Pink;
-                                urlbar.BorderBrush = Brushes.Pink;
-                                sidebar.Background = Brushes.Plum;
-                                goButton.Background = Brushes.Pink;
-                                goButton.BorderBrush = Brushes.Pink;
-                                settingsButton.Background = Brushes.Pink;
-                                settingsButton.BorderBrush = Brushes.Pink;
+                                navbar.Background = Brushes.HotPink;
+                                urlbar.Background = Brushes.Violet;
+                                urlbar.BorderBrush = Brushes.Violet;
+                                sidebar.Background = Brushes.HotPink;
+                                goButton.Background = Brushes.Violet;
+                                goButton.BorderBrush = Brushes.Violet;
+                                settingsButton.Background = Brushes.Violet;
+                                settingsButton.BorderBrush = Brushes.Violet;
                                 break;
                         }
                     }
