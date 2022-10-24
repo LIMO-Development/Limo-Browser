@@ -105,6 +105,14 @@ namespace LimoBrowserApp
             {
                 switch (line)
                 {
+                    case "tabplacement:top;":
+                        tabs.TabStripPlacement = Dock.Top;
+                        break;
+
+                    case "tabplacement:bottom;":
+                        tabs.TabStripPlacement = Dock.Bottom;
+                        break;
+
                     case "theme:red;":
                         allControls.Background = Brushes.DarkRed;
                         tabs.Background = Brushes.DarkRed;
