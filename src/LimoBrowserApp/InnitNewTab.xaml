@@ -53,7 +53,7 @@
             </Grid>
             <wpf:ChromiumWebBrowser
                 x:Name="www"
-                Address="https://www.google.com"
+                Address="https://limodevelopmentcom.ferder.repl.co/limobnewtab"
                 Grid.Row="1" Grid.Column="1"/>
         </Grid>
     </StackPanel>

@@ -42,10 +42,15 @@ namespace LimoBrowserApp
         {
             if (urlbar.Text != null)
             {
-                if (urlbar.Text.Contains(".") && !urlbar.Text.Contains(" "))
+                if (urlbar.Text == "limob://newtab")
+                {
+                    www.Load("https://limodevelopmentcom.ferder.repl.co/limobnewtab");
+                }
+                else if (urlbar.Text.Contains(".") && !urlbar.Text.Contains(" "))
                 {
                     www.Load("https://" + urlbar.Text);
-                } else
+                } 
+                else
                 {
                     www.Load("https://www.google.com/search?q=" + urlbar.Text);
                 }
