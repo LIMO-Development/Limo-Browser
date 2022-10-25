@@ -64,8 +64,8 @@ namespace LimoBrowserApp
             switch (settingsShown)
             {
                 case true:
-                    browserGrid.ColumnDefinitions.RemoveAt(2);
-                    browserGrid.Children.RemoveAt(2);
+                    browserGrid.ColumnDefinitions.RemoveAt(3);
+                    browserGrid.Children.RemoveAt(3);
                     def2.Width = new GridLength(SystemParameters.PrimaryScreenWidth - 30);
                     settingsShown = false;
                     break;
@@ -112,7 +112,7 @@ namespace LimoBrowserApp
                     browserGrid.Children.Add(settingspanel);
 
                     // setter
-                    Grid.SetColumn(settingspanel, 2);
+                    Grid.SetColumn(settingspanel, 3);
                     def2.Width = new GridLength(SystemParameters.PrimaryScreenWidth - 330);
                     settingsShown = true;
                     break;

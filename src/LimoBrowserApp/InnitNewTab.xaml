@@ -43,6 +43,7 @@
         <Grid x:Name="browserGrid">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="30" />
+                <ColumnDefinition Width="0px" x:Name="appWidgetDef" />
                 <ColumnDefinition x:Name="def2" />
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0" Background="DarkRed" x:Name="sidebar">
@@ -50,11 +51,20 @@
                     <RowDefinition Height="30px" />
                     <RowDefinition Height="30px" />
                 </Grid.RowDefinitions>
+                <Button Background="Transparent" BorderBrush="Transparent" Grid.Row="0">
+                    <TextBlock Text="T" Foreground="LightBlue" />
+                </Button>
+                <Button Background="Transparent" BorderBrush="Transparent" Grid.Row="1">
+                    <TextBlock Text="YT" Foreground="Red" />
+                </Button>
+            </Grid>
+            <Grid Width="0px" x:Name="appWidget">
+                
             </Grid>
             <wpf:ChromiumWebBrowser
                 x:Name="www"
                 Address="https://limodevelopmentcom.ferder.repl.co/limobnewtab"
-                Grid.Row="1" Grid.Column="1"/>
+                Grid.Row="1" Grid.Column="2"/>
         </Grid>
     </StackPanel>
 </UserControl>
