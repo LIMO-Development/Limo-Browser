@@ -50,17 +50,37 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30px" />
                     <RowDefinition Height="30px" />
+                    <RowDefinition Height="30px" />
+                    <RowDefinition Height="30px" />
+                    <RowDefinition Height="30px" />
+                    <RowDefinition Height="30px" />
                 </Grid.RowDefinitions>
-                <Button Background="Transparent" BorderBrush="Transparent" Grid.Row="0">
-                    <TextBlock Text="T" Foreground="LightBlue" />
+                <Button Background="Transparent" BorderBrush="Transparent" Grid.Row="0" Click="ToggleYoutubeWidget">
+                    <TextBlock Text="YT" Foreground="LightBlue" />
                 </Button>
-                <Button Background="Transparent" BorderBrush="Transparent" Grid.Row="1">
-                    <TextBlock Text="YT" Foreground="Red" />
+                <Button Background="Transparent" BorderBrush="Transparent" Grid.Row="1" Click="ToggleTiktokWidget">
+                    <TextBlock Text="T" Foreground="Red" />
+                </Button>
+                <Button Background="Transparent" BorderBrush="Transparent" Grid.Row="2" Click="ToggleDiscordWidget">
+                    <TextBlock Text="D" Foreground="Blue" />
+                </Button>
+                <Button Background="Transparent" BorderBrush="Transparent" Grid.Row="3" Click="ToggleInstagramWidget">
+                    <TextBlock Text="IG" Foreground="Magenta" />
+                </Button>
+                <Button Background="Transparent" BorderBrush="Transparent" Grid.Row="4" Click="ToggleTwitterWidget">
+                    <TextBlock Text="TW" Foreground="CornflowerBlue" />
+                </Button>
+                <Button Background="Transparent" BorderBrush="Transparent" Grid.Row="5" Click="ToggleSpotifyWidget">
+                    <TextBlock Text="SP" Foreground="Lime" />
                 </Button>
             </Grid>
-            <Grid Width="0px" x:Name="appWidget">
-                
-            </Grid>
+            <StackPanel Grid.Column="1" Width="0px" x:Name="appWidget" Background="DimGray">
+                <Grid Width="0px" Height="30px" x:Name="appWidgetNavbar">
+                    
+                </Grid>
+                <wpf:ChromiumWebBrowser 
+                    x:Name="appWidgetWebview"/>
+            </StackPanel>
             <wpf:ChromiumWebBrowser
                 x:Name="www"
                 Address="https://limodevelopmentcom.ferder.repl.co/limobnewtab"

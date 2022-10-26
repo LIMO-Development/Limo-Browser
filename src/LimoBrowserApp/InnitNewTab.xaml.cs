@@ -119,6 +119,224 @@ namespace LimoBrowserApp
             }
         }
 
+        public bool appwidgetshown = false;
+
+        public void ToggleYoutubeWidget(object sender, RoutedEventArgs e)
+        {
+            switch (appwidgetshown)
+            {
+                case true:
+                    appWidgetDef.Width = new GridLength(0);
+                    appWidget.Width = 0;
+                    appWidgetNavbar.Width = 0;
+                    appWidgetWebview.Width = 0;
+                    appWidgetWebview.Height = 0;
+                    appWidgetWebview.Address = "";
+                    def2.Width = new GridLength(SystemParameters.PrimaryScreenWidth - 30);
+                    appwidgetshown = false;
+                    break;
+
+                case false:
+                    switch (settingsShown)
+                    {
+                        case true:
+                            break;
+
+                        case false:
+                            appWidgetDef.Width = new GridLength((SystemParameters.PrimaryScreenWidth / 2) - 30);
+                            appWidget.Width = (SystemParameters.PrimaryScreenWidth / 2) - 30;
+                            appWidgetNavbar.Width = (SystemParameters.PrimaryScreenWidth / 2) - 30;
+                            appWidgetWebview.Width = (SystemParameters.PrimaryScreenWidth / 2) - 30;
+                            appWidgetWebview.Height = (SystemParameters.PrimaryScreenHeight - 30) - 105;
+                            appWidgetWebview.Address = "https://www.youtube.com";
+                            def2.Width = new GridLength(SystemParameters.PrimaryScreenWidth - ((SystemParameters.PrimaryScreenWidth / 2) + 30));
+                            appwidgetshown = true;
+                            break;
+                    }
+                    break;
+            }
+        }
+
+        public void ToggleTiktokWidget(object sender, RoutedEventArgs e)
+        {
+            switch (appwidgetshown)
+            {
+                case true:
+                    appWidgetDef.Width = new GridLength(0);
+                    appWidget.Width = 0;
+                    appWidgetNavbar.Width = 0;
+                    appWidgetWebview.Width = 0;
+                    appWidgetWebview.Height = 0;
+                    appWidgetWebview.Address = "";
+                    def2.Width = new GridLength(SystemParameters.PrimaryScreenWidth - 30);
+                    appwidgetshown = false;
+                    break;
+
+                case false:
+                    switch (settingsShown)
+                    {
+                        case true:
+                            break;
+
+                        case false:
+                            appWidgetDef.Width = new GridLength((SystemParameters.PrimaryScreenWidth / 2) - 30);
+                            appWidget.Width = (SystemParameters.PrimaryScreenWidth / 2) - 30;
+                            appWidgetNavbar.Width = (SystemParameters.PrimaryScreenWidth / 2) - 30;
+                            appWidgetWebview.Width = (SystemParameters.PrimaryScreenWidth / 2) - 30;
+                            appWidgetWebview.Height = (SystemParameters.PrimaryScreenHeight - 30) - 105;
+                            appWidgetWebview.Address = "https://www.tiktok.com";
+                            def2.Width = new GridLength(SystemParameters.PrimaryScreenWidth - ((SystemParameters.PrimaryScreenWidth / 2) + 30));
+                            appwidgetshown = true;
+                            break;
+                    }
+                    break;
+            }
+        }
+
+        public void ToggleDiscordWidget(object sender, RoutedEventArgs e)
+        {
+            switch (appwidgetshown)
+            {
+                case true:
+                    appWidgetDef.Width = new GridLength(0);
+                    appWidget.Width = 0;
+                    appWidgetNavbar.Width = 0;
+                    appWidgetWebview.Width = 0;
+                    appWidgetWebview.Height = 0;
+                    appWidgetWebview.Address = "";
+                    def2.Width = new GridLength(SystemParameters.PrimaryScreenWidth - 30);
+                    appwidgetshown = false;
+                    break;
+
+                case false:
+                    switch (settingsShown)
+                    {
+                        case true:
+                            break;
+
+                        case false:
+                            appWidgetDef.Width = new GridLength((SystemParameters.PrimaryScreenWidth / 2) - 30);
+                            appWidget.Width = (SystemParameters.PrimaryScreenWidth / 2) - 30;
+                            appWidgetNavbar.Width = (SystemParameters.PrimaryScreenWidth / 2) - 30;
+                            appWidgetWebview.Width = (SystemParameters.PrimaryScreenWidth / 2) - 30;
+                            appWidgetWebview.Height = (SystemParameters.PrimaryScreenHeight - 30) - 105;
+                            appWidgetWebview.Address = "https://www.discord.com/app";
+                            def2.Width = new GridLength(SystemParameters.PrimaryScreenWidth - ((SystemParameters.PrimaryScreenWidth / 2) + 30));
+                            appwidgetshown = true;
+                            break;
+                    }
+                    break;
+            }
+        }
+
+        public void ToggleInstagramWidget(object sender, RoutedEventArgs e)
+        {
+            switch (appwidgetshown)
+            {
+                case true:
+                    appWidgetDef.Width = new GridLength(0);
+                    appWidget.Width = 0;
+                    appWidgetNavbar.Width = 0;
+                    appWidgetWebview.Width = 0;
+                    appWidgetWebview.Height = 0;
+                    appWidgetWebview.Address = "";
+                    def2.Width = new GridLength(SystemParameters.PrimaryScreenWidth - 30);
+                    appwidgetshown = false;
+                    break;
+
+                case false:
+                    switch (settingsShown)
+                    {
+                        case true:
+                            break;
+
+                        case false:
+                            appWidgetDef.Width = new GridLength((SystemParameters.PrimaryScreenWidth / 2) - 30);
+                            appWidget.Width = (SystemParameters.PrimaryScreenWidth / 2) - 30;
+                            appWidgetNavbar.Width = (SystemParameters.PrimaryScreenWidth / 2) - 30;
+                            appWidgetWebview.Width = (SystemParameters.PrimaryScreenWidth / 2) - 30;
+                            appWidgetWebview.Height = (SystemParameters.PrimaryScreenHeight - 30) - 105;
+                            appWidgetWebview.Address = "https://www.instagram.com";
+                            def2.Width = new GridLength(SystemParameters.PrimaryScreenWidth - ((SystemParameters.PrimaryScreenWidth / 2) + 30));
+                            appwidgetshown = true;
+                            break;
+                    }
+                    break;
+            }
+        }
+
+        public void ToggleTwitterWidget(object sender, RoutedEventArgs e)
+        {
+            switch (appwidgetshown)
+            {
+                case true:
+                    appWidgetDef.Width = new GridLength(0);
+                    appWidget.Width = 0;
+                    appWidgetNavbar.Width = 0;
+                    appWidgetWebview.Width = 0;
+                    appWidgetWebview.Height = 0;
+                    appWidgetWebview.Address = "";
+                    def2.Width = new GridLength(SystemParameters.PrimaryScreenWidth - 30);
+                    appwidgetshown = false;
+                    break;
+
+                case false:
+                    switch (settingsShown)
+                    {
+                        case true:
+                            break;
+
+                        case false:
+                            appWidgetDef.Width = new GridLength((SystemParameters.PrimaryScreenWidth / 2) - 30);
+                            appWidget.Width = (SystemParameters.PrimaryScreenWidth / 2) - 30;
+                            appWidgetNavbar.Width = (SystemParameters.PrimaryScreenWidth / 2) - 30;
+                            appWidgetWebview.Width = (SystemParameters.PrimaryScreenWidth / 2) - 30;
+                            appWidgetWebview.Height = (SystemParameters.PrimaryScreenHeight - 30) - 105;
+                            appWidgetWebview.Address = "https://www.twitter.com";
+                            def2.Width = new GridLength(SystemParameters.PrimaryScreenWidth - ((SystemParameters.PrimaryScreenWidth / 2) + 30));
+                            appwidgetshown = true;
+                            break;
+                    }
+                    break;
+            }
+        }
+
+        public void ToggleSpotifyWidget(object sender, RoutedEventArgs e)
+        {
+            switch (appwidgetshown)
+            {
+                case true:
+                    appWidgetDef.Width = new GridLength(0);
+                    appWidget.Width = 0;
+                    appWidgetNavbar.Width = 0;
+                    appWidgetWebview.Width = 0;
+                    appWidgetWebview.Height = 0;
+                    appWidgetWebview.Address = "";
+                    def2.Width = new GridLength(SystemParameters.PrimaryScreenWidth - 30);
+                    appwidgetshown = false;
+                    break;
+
+                case false:
+                    switch (settingsShown)
+                    {
+                        case true:
+                            break;
+
+                        case false:
+                            appWidgetDef.Width = new GridLength((SystemParameters.PrimaryScreenWidth / 2) - 30);
+                            appWidget.Width = (SystemParameters.PrimaryScreenWidth / 2) - 30;
+                            appWidgetNavbar.Width = (SystemParameters.PrimaryScreenWidth / 2) - 30;
+                            appWidgetWebview.Width = (SystemParameters.PrimaryScreenWidth / 2) - 30;
+                            appWidgetWebview.Height = (SystemParameters.PrimaryScreenHeight - 30) - 105;
+                            appWidgetWebview.Address = "https://open.spotify.com";
+                            def2.Width = new GridLength(SystemParameters.PrimaryScreenWidth - ((SystemParameters.PrimaryScreenWidth / 2) + 30));
+                            appwidgetshown = true;
+                            break;
+                    }
+                    break;
+            }
+        }
+
         public void ParseThemeFile()
         {
             string file = "C:\\Users\\" + Environment.UserName + "\\AppData\\Local\\LIMO-Development\\LIMO-Browser\\settings\\Themes.limobrowsertheme";
