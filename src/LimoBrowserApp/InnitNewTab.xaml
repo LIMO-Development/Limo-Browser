@@ -29,6 +29,8 @@
                 <ColumnDefinition x:Name="def1" />
                 <ColumnDefinition Width="65px" />
                 <ColumnDefinition Width="65px" />
+                <ColumnDefinition Width="65px" />
+                <ColumnDefinition Width="65px" />
             </Grid.ColumnDefinitions>
             <TextBox x:Name="urlbar" Background="Red" BorderBrush="Red" Height="20px" Grid.Column="0" Style="{StaticResource textboxBorderStyle}">
                 
@@ -36,7 +38,13 @@
             <Button x:Name="goButton" Background="Red" BorderBrush="Red" Height="20px" Width="50px" Grid.Column="1" Click="LoadCefSharpWebPage" Style="{StaticResource buttonBorderStyle}">
                 <TextBlock Text="Go" />
             </Button>
-            <Button x:Name="settingsButton" Background="Red" BorderBrush="Red" Height="20px" Width="50px" Grid.Column="2" Click="ToggleSettings" Style="{StaticResource buttonBorderStyle}">
+            <Button x:Name="backButton" Background="Red" BorderBrush="Red" Height="20px" Width="50px" Grid.Column="2" Click="GoBackInBrowser" Style="{StaticResource buttonBorderStyle}">
+                <TextBlock Text="-" />
+            </Button>
+            <Button x:Name="forwardButton" Background="Red" BorderBrush="Red" Height="20px" Width="50px" Grid.Column="3" Click="GoForwardInBrowser" Style="{StaticResource buttonBorderStyle}">
+                <TextBlock Text="+" />
+            </Button>
+            <Button x:Name="settingsButton" Background="Red" BorderBrush="Red" Height="20px" Width="50px" Grid.Column="4" Click="ToggleSettings" Style="{StaticResource buttonBorderStyle}">
                 <TextBlock Text="S" />
             </Button>
         </Grid>

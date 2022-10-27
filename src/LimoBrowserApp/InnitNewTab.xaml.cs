@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CefSharp;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -34,8 +35,8 @@ namespace LimoBrowserApp
             navbar.Height = 30;
             def2.Width = new GridLength(SystemParameters.PrimaryScreenWidth - 30);
             www.Height = (SystemParameters.PrimaryScreenHeight - 60) - 105;
-            def1.Width = new GridLength(SystemParameters.PrimaryScreenWidth - 130);
-            urlbar.Width = SystemParameters.PrimaryScreenWidth - 140;
+            def1.Width = new GridLength(SystemParameters.PrimaryScreenWidth - 260);
+            urlbar.Width = SystemParameters.PrimaryScreenWidth - 275;
         }
 
         public void LoadCefSharpWebPage(object sender, RoutedEventArgs e)
@@ -49,11 +50,37 @@ namespace LimoBrowserApp
                 else if (urlbar.Text.Contains(".") && !urlbar.Text.Contains(" "))
                 {
                     www.Load("https://" + urlbar.Text);
-                } 
+                }
                 else
                 {
                     www.Load("https://www.google.com/search?q=" + urlbar.Text);
                 }
+            }
+        }
+
+        public void GoBackInBrowser(object sender, RoutedEventArgs e)
+        {
+            switch (www.CanGoBack)
+            {
+                case true:
+                    www.Back();
+                    break;
+
+                case false:
+                    break;
+            }
+        }
+
+        public void GoForwardInBrowser(object sender, RoutedEventArgs e)
+        {
+            switch (www.CanGoForward)
+            {
+                case true:
+                    www.Forward();
+                    break;
+
+                case false:
+                    break;
             }
         }
         
@@ -77,41 +104,20 @@ namespace LimoBrowserApp
                     browserGrid.ColumnDefinitions.Add(settingsdef);
 
                     // initializer
-                    Grid settingspanel = new Grid();
+                    StackPanel settingspanel = new StackPanel();
                     settingspanel.Background = Brushes.DimGray;
 
-                    // style
-                    RowDefinition rowdef1 = new RowDefinition();
-                    rowdef1.Height = new GridLength(50);
+                    // options
+                    Button button1 = new Button();
+                    TextBlock label1 = new TextBlock();
+                    label1.Text = "Open WebApp mode";
+                    button1.Content = label1;
 
-                    Grid setting1 = new Grid();
-                    Grid.SetRow(setting1, 0);
-
-                    ColumnDefinition columndef1 = new ColumnDefinition();
-                    columndef1.Width = new GridLength(150);
-                    ColumnDefinition columndef2 = new ColumnDefinition();
-                    columndef2.Width = new GridLength(150);
-
-                    TextBlock text1 = new TextBlock();
-                    text1.Text = "Theme: ";
-                    Grid.SetColumn(text1, 0);
-
-                    ScrollViewer themesviewer = new ScrollViewer();
-                    themesviewer.VerticalScrollBarVisibility = ScrollBarVisibility.Disabled;
-                    Grid.SetColumn(themesviewer, 1);
-
-                    setting1.Children.Add(text1);
-                    setting1.Children.Add(themesviewer);
-
-                    setting1.ColumnDefinitions.Add(columndef1);
-                    setting1.ColumnDefinitions.Add(columndef2);
-
-                    // adder
-                    settingspanel.Children.Add(setting1);
-                    settingspanel.RowDefinitions.Add(rowdef1);
+                    // adders
+                    settingspanel.Children.Add(button1);
                     browserGrid.Children.Add(settingspanel);
 
-                    // setter
+                    // setters
                     Grid.SetColumn(settingspanel, 3);
                     def2.Width = new GridLength(SystemParameters.PrimaryScreenWidth - 330);
                     settingsShown = true;
@@ -354,6 +360,10 @@ namespace LimoBrowserApp
                                 sidebar.Background = Brushes.DarkRed;
                                 goButton.Background = Brushes.Red;
                                 goButton.BorderBrush = Brushes.Red;
+                                backButton.Background = Brushes.Red;
+                                backButton.BorderBrush = Brushes.Red;
+                                forwardButton.Background = Brushes.Red;
+                                forwardButton.BorderBrush = Brushes.Red;
                                 settingsButton.Background = Brushes.Red;
                                 settingsButton.BorderBrush = Brushes.Red;
                                 break;
@@ -365,6 +375,10 @@ namespace LimoBrowserApp
                                 sidebar.Background = Brushes.DarkOrange;
                                 goButton.Background = Brushes.Orange;
                                 goButton.BorderBrush = Brushes.Orange;
+                                backButton.Background = Brushes.Orange;
+                                backButton.BorderBrush = Brushes.Orange;
+                                forwardButton.Background = Brushes.Orange;
+                                forwardButton.BorderBrush = Brushes.Orange;
                                 settingsButton.Background = Brushes.Orange;
                                 settingsButton.BorderBrush = Brushes.Orange;
                                 break;
@@ -376,6 +390,10 @@ namespace LimoBrowserApp
                                 sidebar.Background = Brushes.Gold;
                                 goButton.Background = Brushes.Yellow;
                                 goButton.BorderBrush = Brushes.Yellow;
+                                backButton.Background = Brushes.Yellow;
+                                backButton.BorderBrush = Brushes.Yellow;
+                                forwardButton.Background = Brushes.Yellow;
+                                forwardButton.BorderBrush = Brushes.Yellow;
                                 settingsButton.Background = Brushes.Yellow;
                                 settingsButton.BorderBrush = Brushes.Yellow;
                                 break;
@@ -387,6 +405,10 @@ namespace LimoBrowserApp
                                 sidebar.Background = Brushes.YellowGreen;
                                 goButton.Background = Brushes.GreenYellow;
                                 goButton.BorderBrush = Brushes.GreenYellow;
+                                backButton.Background = Brushes.GreenYellow;
+                                backButton.BorderBrush = Brushes.GreenYellow;
+                                forwardButton.Background = Brushes.GreenYellow;
+                                forwardButton.BorderBrush = Brushes.GreenYellow;
                                 settingsButton.Background = Brushes.GreenYellow;
                                 settingsButton.BorderBrush = Brushes.GreenYellow;
                                 break;
@@ -398,6 +420,10 @@ namespace LimoBrowserApp
                                 sidebar.Background = Brushes.DarkGreen;
                                 goButton.Background = Brushes.Lime;
                                 goButton.BorderBrush = Brushes.Lime;
+                                backButton.Background = Brushes.Lime;
+                                backButton.BorderBrush = Brushes.Lime;
+                                forwardButton.Background = Brushes.Lime;
+                                forwardButton.BorderBrush = Brushes.Lime;
                                 settingsButton.Background = Brushes.Lime;
                                 settingsButton.BorderBrush = Brushes.Lime;
                                 break;
@@ -409,6 +435,10 @@ namespace LimoBrowserApp
                                 sidebar.Background = Brushes.CadetBlue;
                                 goButton.Background = Brushes.Aquamarine;
                                 goButton.BorderBrush = Brushes.Aquamarine;
+                                backButton.Background = Brushes.Aquamarine;
+                                backButton.BorderBrush = Brushes.Aquamarine;
+                                forwardButton.Background = Brushes.Aquamarine;
+                                forwardButton.BorderBrush = Brushes.Aquamarine;
                                 settingsButton.Background = Brushes.Aquamarine;
                                 settingsButton.BorderBrush = Brushes.Aquamarine;
                                 break;
@@ -420,6 +450,10 @@ namespace LimoBrowserApp
                                 sidebar.Background = Brushes.DarkCyan;
                                 goButton.Background = Brushes.Cyan;
                                 goButton.BorderBrush = Brushes.Cyan;
+                                backButton.Background = Brushes.Cyan;
+                                backButton.BorderBrush = Brushes.Cyan;
+                                forwardButton.Background = Brushes.Cyan;
+                                forwardButton.BorderBrush = Brushes.Cyan;
                                 settingsButton.Background = Brushes.Cyan;
                                 settingsButton.BorderBrush = Brushes.Cyan;
                                 break;
@@ -431,6 +465,10 @@ namespace LimoBrowserApp
                                 sidebar.Background = Brushes.LightSkyBlue;
                                 goButton.Background = Brushes.LightBlue;
                                 goButton.BorderBrush = Brushes.LightBlue;
+                                backButton.Background = Brushes.LightBlue;
+                                backButton.BorderBrush = Brushes.LightBlue;
+                                forwardButton.Background = Brushes.LightBlue;
+                                forwardButton.BorderBrush = Brushes.LightBlue;
                                 settingsButton.Background = Brushes.LightBlue;
                                 settingsButton.BorderBrush = Brushes.LightBlue;
                                 break;
@@ -442,6 +480,10 @@ namespace LimoBrowserApp
                                 sidebar.Background = Brushes.DarkBlue;
                                 goButton.Background = Brushes.Blue;
                                 goButton.BorderBrush = Brushes.Blue;
+                                backButton.Background = Brushes.Blue;
+                                backButton.BorderBrush = Brushes.Blue;
+                                forwardButton.Background = Brushes.Blue;
+                                forwardButton.BorderBrush = Brushes.Blue;
                                 settingsButton.Background = Brushes.Blue;
                                 settingsButton.BorderBrush = Brushes.Blue;
                                 break;
@@ -453,6 +495,10 @@ namespace LimoBrowserApp
                                 sidebar.Background = Brushes.Purple;
                                 goButton.Background = Brushes.DarkOrchid;
                                 goButton.BorderBrush = Brushes.DarkOrchid;
+                                backButton.Background = Brushes.DarkOrchid;
+                                backButton.BorderBrush = Brushes.DarkOrchid;
+                                forwardButton.Background = Brushes.DarkOrchid;
+                                forwardButton.BorderBrush = Brushes.DarkOrchid;
                                 settingsButton.Background = Brushes.DarkOrchid;
                                 settingsButton.BorderBrush = Brushes.DarkOrchid;
                                 break;
@@ -464,6 +510,10 @@ namespace LimoBrowserApp
                                 sidebar.Background = Brushes.HotPink;
                                 goButton.Background = Brushes.Violet;
                                 goButton.BorderBrush = Brushes.Violet;
+                                backButton.Background = Brushes.Violet;
+                                backButton.BorderBrush = Brushes.Violet;
+                                forwardButton.Background = Brushes.Violet;
+                                forwardButton.BorderBrush = Brushes.Violet;
                                 settingsButton.Background = Brushes.Violet;
                                 settingsButton.BorderBrush = Brushes.Violet;
                                 break;
@@ -476,6 +526,10 @@ namespace LimoBrowserApp
                                 sidebar.Background = Brushes.Black;
                                 goButton.Background = Brushes.Red;
                                 goButton.BorderBrush = Brushes.Red;
+                                backButton.Background = Brushes.Red;
+                                backButton.BorderBrush = Brushes.Red;
+                                forwardButton.Background = Brushes.Red;
+                                forwardButton.BorderBrush = Brushes.Red;
                                 settingsButton.Background = Brushes.Red;
                                 settingsButton.BorderBrush = Brushes.Red;
                                 break;
@@ -487,6 +541,10 @@ namespace LimoBrowserApp
                                 sidebar.Background = Brushes.Black;
                                 goButton.Background = Brushes.Orange;
                                 goButton.BorderBrush = Brushes.Orange;
+                                backButton.Background = Brushes.Orange;
+                                backButton.BorderBrush = Brushes.Orange;
+                                forwardButton.Background = Brushes.Orange;
+                                forwardButton.BorderBrush = Brushes.Orange;
                                 settingsButton.Background = Brushes.Orange;
                                 settingsButton.BorderBrush = Brushes.Orange;
                                 break;
@@ -498,6 +556,10 @@ namespace LimoBrowserApp
                                 sidebar.Background = Brushes.Black;
                                 goButton.Background = Brushes.Yellow;
                                 goButton.BorderBrush = Brushes.Yellow;
+                                backButton.Background = Brushes.Yellow;
+                                backButton.BorderBrush = Brushes.Yellow;
+                                forwardButton.Background = Brushes.Yellow;
+                                forwardButton.BorderBrush = Brushes.Yellow;
                                 settingsButton.Background = Brushes.Yellow;
                                 settingsButton.BorderBrush = Brushes.Yellow;
                                 break;
@@ -509,6 +571,10 @@ namespace LimoBrowserApp
                                 sidebar.Background = Brushes.Black;
                                 goButton.Background = Brushes.YellowGreen;
                                 goButton.BorderBrush = Brushes.YellowGreen;
+                                backButton.Background = Brushes.YellowGreen;
+                                backButton.BorderBrush = Brushes.YellowGreen;
+                                forwardButton.Background = Brushes.YellowGreen;
+                                forwardButton.BorderBrush = Brushes.YellowGreen;
                                 settingsButton.Background = Brushes.YellowGreen;
                                 settingsButton.BorderBrush = Brushes.YellowGreen;
                                 break;
@@ -520,6 +586,10 @@ namespace LimoBrowserApp
                                 sidebar.Background = Brushes.Black;
                                 goButton.Background = Brushes.Lime;
                                 goButton.BorderBrush = Brushes.Lime;
+                                backButton.Background = Brushes.Lime;
+                                backButton.BorderBrush = Brushes.Lime;
+                                forwardButton.Background = Brushes.Lime;
+                                forwardButton.BorderBrush = Brushes.Lime;
                                 settingsButton.Background = Brushes.Lime;
                                 settingsButton.BorderBrush = Brushes.Lime;
                                 break;
@@ -531,6 +601,10 @@ namespace LimoBrowserApp
                                 sidebar.Background = Brushes.Black;
                                 goButton.Background = Brushes.Aquamarine;
                                 goButton.BorderBrush = Brushes.Aquamarine;
+                                backButton.Background = Brushes.Aquamarine;
+                                backButton.BorderBrush = Brushes.Aquamarine;
+                                forwardButton.Background = Brushes.Aquamarine;
+                                forwardButton.BorderBrush = Brushes.Aquamarine;
                                 settingsButton.Background = Brushes.Aquamarine;
                                 settingsButton.BorderBrush = Brushes.Aquamarine;
                                 break;
@@ -542,6 +616,10 @@ namespace LimoBrowserApp
                                 sidebar.Background = Brushes.Black;
                                 goButton.Background = Brushes.Cyan;
                                 goButton.BorderBrush = Brushes.Cyan;
+                                backButton.Background = Brushes.Cyan;
+                                backButton.BorderBrush = Brushes.Cyan;
+                                forwardButton.Background = Brushes.Cyan;
+                                forwardButton.BorderBrush = Brushes.Cyan;
                                 settingsButton.Background = Brushes.Cyan;
                                 settingsButton.BorderBrush = Brushes.Cyan;
                                 break;
@@ -553,6 +631,10 @@ namespace LimoBrowserApp
                                 sidebar.Background = Brushes.Black;
                                 goButton.Background = Brushes.LightBlue;
                                 goButton.BorderBrush = Brushes.LightBlue;
+                                backButton.Background = Brushes.LightBlue;
+                                backButton.BorderBrush = Brushes.LightBlue;
+                                forwardButton.Background = Brushes.LightBlue;
+                                forwardButton.BorderBrush = Brushes.LightBlue;
                                 settingsButton.Background = Brushes.LightBlue;
                                 settingsButton.BorderBrush = Brushes.LightBlue;
                                 break;
@@ -564,6 +646,10 @@ namespace LimoBrowserApp
                                 sidebar.Background = Brushes.Black;
                                 goButton.Background = Brushes.Blue;
                                 goButton.BorderBrush = Brushes.Blue;
+                                backButton.Background = Brushes.Blue;
+                                backButton.BorderBrush = Brushes.Blue;
+                                forwardButton.Background = Brushes.Blue;
+                                forwardButton.BorderBrush = Brushes.Blue;
                                 settingsButton.Background = Brushes.Blue;
                                 settingsButton.BorderBrush = Brushes.Blue;
                                 break;
@@ -575,6 +661,10 @@ namespace LimoBrowserApp
                                 sidebar.Background = Brushes.Black;
                                 goButton.Background = Brushes.Purple;
                                 goButton.BorderBrush = Brushes.Purple;
+                                backButton.Background = Brushes.Purple;
+                                backButton.BorderBrush = Brushes.Purple;
+                                forwardButton.Background = Brushes.Purple;
+                                forwardButton.BorderBrush = Brushes.Purple;
                                 settingsButton.Background = Brushes.Purple;
                                 settingsButton.BorderBrush = Brushes.Purple;
                                 break;
@@ -586,6 +676,10 @@ namespace LimoBrowserApp
                                 sidebar.Background = Brushes.Black;
                                 goButton.Background = Brushes.Violet;
                                 goButton.BorderBrush = Brushes.Violet;
+                                backButton.Background = Brushes.Violet;
+                                backButton.BorderBrush = Brushes.Violet;
+                                forwardButton.Background = Brushes.Violet;
+                                forwardButton.BorderBrush = Brushes.Violet;
                                 settingsButton.Background = Brushes.Violet;
                                 settingsButton.BorderBrush = Brushes.Violet;
                                 break;
