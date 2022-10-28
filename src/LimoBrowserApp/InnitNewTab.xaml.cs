@@ -29,6 +29,8 @@ namespace LimoBrowserApp
             ParseThemeFile();
         }
 
+        public bool newtabLoadedFromFile = false;
+
         public void SetupElemsFromXAML()
         {
             navbar.Width = SystemParameters.PrimaryScreenWidth;
@@ -37,6 +39,17 @@ namespace LimoBrowserApp
             www.Height = (SystemParameters.PrimaryScreenHeight - 60) - 105;
             def1.Width = new GridLength(SystemParameters.PrimaryScreenWidth - 260);
             urlbar.Width = SystemParameters.PrimaryScreenWidth - 275;
+            switch (System.IO.File.Exists("C:\\Users\\" + Environment.UserName + "\\AppData\\Local\\LIMO-Development\\LIMO-Browser\\newtabpage\\index.html") && System.IO.File.ReadAllText("C:\\Users\\" + Environment.UserName + "\\AppData\\Local\\LIMO-Development\\LIMO-Browser\\newtabpage\\index.html") != null)
+            {
+                case true:
+                    www.Address = "file://C:/Users/" + Environment.UserName + "/AppData/Local/LIMO-Development/LIMO-Browser/newtabpage/index.html";
+                    newtabLoadedFromFile = true;
+                    break;
+
+                case false:
+                    newtabLoadedFromFile = false;
+                    break;
+            }
         }
 
         public void LoadCefSharpWebPage(object sender, RoutedEventArgs e)
@@ -45,7 +58,16 @@ namespace LimoBrowserApp
             {
                 if (urlbar.Text == "limob://newtab")
                 {
-                    www.Load("https://limodevelopmentcom.ferder.repl.co/limobnewtab");
+                    switch (newtabLoadedFromFile)
+                    {
+                        case true:
+                            www.Address = "file://C:/Users/" + Environment.UserName + "/AppData/Local/LIMO-Development/LIMO-Browser/newtabpage/index.html";
+                            break;
+
+                        case false:
+                            www.Load("https://limodevelopmentcom.ferder.repl.co/limobnewtab");
+                            break;
+                    }
                 }
                 else if (urlbar.Text.Contains(".") && !urlbar.Text.Contains(" "))
                 {
