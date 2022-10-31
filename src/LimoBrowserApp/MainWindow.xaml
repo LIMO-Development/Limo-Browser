@@ -51,6 +51,43 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="addSettingsStyle" TargetType="TabItem">
+            <Setter Property="Height" Value="30px" />
+            <Setter Property="Width" Value="30px" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Border BorderBrush="DimGray" Background="DimGray" BorderThickness="1" Height="30px" Width="30px" CornerRadius="15">
+                            <Button Background="Transparent" BorderBrush="Transparent" Click="AddSettingsTabToTabControl">
+                                <TextBlock Text="S+" FontSize="15px" />
+                            </Button>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="settingstabStyle" TargetType="TabItem">
+            <Setter Property="Height" Value="40px" />
+            <Setter Property="Width" Value="75px" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Border BorderBrush="DimGray" Background="DimGray" BorderThickness="1" Height="30px" Width="75px" CornerRadius="15">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50px" />
+                                    <ColumnDefinition Width="20px" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Settings" FontSize="15px" Grid.Column="0"/>
+                                <Button Height="20px" Grid.Column="1" Background="Transparent" BorderBrush="Transparent" Click="RemoveTabFromTabControl">
+                                    <TextBlock Text="x" FontSize="10px" />
+                                </Button>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Grid Background="DarkRed" x:Name="allControls">
         <TabControl x:Name="tabs" Background="Red" Style="{StaticResource tabsStyle}" BorderBrush="DimGray" BorderThickness="2">
@@ -58,6 +95,8 @@
                 <local:InnitNewTab Grid.Row="1" />
             </TabItem>
             <TabItem Style="{StaticResource addtabStyle}" x:Name="addtabTab">
+            </TabItem>
+            <TabItem Style="{StaticResource addSettingsStyle}" x:Name="addSettingsTab">
             </TabItem>
         </TabControl>
     </Grid>

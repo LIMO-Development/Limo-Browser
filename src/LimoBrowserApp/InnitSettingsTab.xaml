@@ -1,0 +1,258 @@
+﻿<UserControl x:Class="LimoBrowserApp.InnitSettingsTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LimoBrowserApp"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style x:Key="themeSelectorStyle" TargetType="Button">
+            <Setter Property="BorderThickness" Value="4px" />
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </Style.Resources>
+        </Style>
+    </UserControl.Resources>
+    <StackPanel x:Name="settingsContainer">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="def1" />
+                <ColumnDefinition x:Name="def2" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Theme:" Grid.Column="0" Height="45px"/>
+            <ScrollViewer x:Name="themebar" Grid.Column="1" Height="45px">
+                <Grid x:Name="themeSelector" Height="45px" Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                        <ColumnDefinition Width="45px" />
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="themeCard" Height="45px" Width="45px" Grid.Column="0" Style="{StaticResource themeSelectorStyle}" Background="Red" BorderBrush="DarkRed" Click="SetRedTheme">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15px" />
+                                <RowDefinition Height="30px" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Red" Grid.Row="0" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="themeCard2" Height="45px" Width="45px" Grid.Column="1" Style="{StaticResource themeSelectorStyle}" Background="Orange" BorderBrush="DarkOrange" Click="SetOrangeTheme">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15px" />
+                                <RowDefinition Height="30px" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Orange" Grid.Row="0" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="themeCard3" Height="45px" Width="45px" Grid.Column="2" Style="{StaticResource themeSelectorStyle}" Background="Yellow" BorderBrush="Gold" Click="SetYellowTheme">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15px" />
+                                <RowDefinition Height="30px" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Yellow" Grid.Row="0" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="themeCard4" Height="45px" Width="45px" Grid.Column="3" Style="{StaticResource themeSelectorStyle}" Background="GreenYellow" BorderBrush="YellowGreen" Click="SetYGreenTheme">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15px" />
+                                <RowDefinition Height="30px" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="YGreen" Grid.Row="0" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="themeCard5" Height="45px" Width="45px" Grid.Column="4" Style="{StaticResource themeSelectorStyle}" Background="Lime" BorderBrush="DarkGreen" Click="SetGreenTheme">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15px" />
+                                <RowDefinition Height="30px" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Green" Grid.Row="0" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="themeCard6" Height="45px" Width="45px" Grid.Column="5" Style="{StaticResource themeSelectorStyle}" Background="Aquamarine" BorderBrush="CadetBlue" Click="SetAmariTheme">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15px" />
+                                <RowDefinition Height="30px" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Amari" Grid.Row="0" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="themeCard7" Height="45px" Width="45px" Grid.Column="6" Style="{StaticResource themeSelectorStyle}" Background="Cyan" BorderBrush="DarkCyan" Click="SetCyanTheme">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15px" />
+                                <RowDefinition Height="30px" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Cyan" Grid.Row="0" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="themeCard8" Height="45px" Width="45px" Grid.Column="7" Style="{StaticResource themeSelectorStyle}" Background="LightBlue" BorderBrush="LightSkyBlue" Click="SetLBlueTheme">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15px" />
+                                <RowDefinition Height="30" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="LBlue" Grid.Row="0" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="themeCard9" Height="45px" Width="45px" Grid.Column="8" Style="{StaticResource themeSelectorStyle}" Background="Blue" BorderBrush="DarkBlue" Click="SetBlueTheme">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15px" />
+                                <RowDefinition Height="30px" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Blue" Grid.Row="0" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="themeCard10" Height="45px" Width="45px" Grid.Column="9" Style="{StaticResource themeSelectorStyle}" Background="DarkOrchid" BorderBrush="Purple" Click="SetPurpleTheme">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15px" />
+                                <RowDefinition Height="30px" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Purple" Grid.Row="0" HorizontalAlignment="Center"/>
+                        </Grid> 
+                    </Button>
+                    <Button x:Name="themeCard11" Height="45px" Width="45px" Grid.Column="10" Style="{StaticResource themeSelectorStyle}" Background="Violet" BorderBrush="HotPink" Click="SetPinkTheme">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15px" />
+                                <RowDefinition Height="30px" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Pink" Grid.Row="0" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="themeCard12" Height="45px" Width="45px" Grid.Column="11" Style="{StaticResource themeSelectorStyle}" Background="Red" BorderBrush="Black" Click="SetBRedTheme">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15px" />
+                                <RowDefinition Height="30px" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="B+Red" Grid.Row="0" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="themeCard13" Height="45px" Width="45px" Grid.Column="12" Style="{StaticResource themeSelectorStyle}" Background="Orange" BorderBrush="Black" Click="SetBOraTheme">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15px" />
+                                <RowDefinition Height="30px" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="B+Ora" Grid.Row="0" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="themeCard14" Height="45px" Width="45px" Grid.Column="13" Style="{StaticResource themeSelectorStyle}" Background="Yellow" BorderBrush="Black" Click="SetBYellTheme">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15px" />
+                                <RowDefinition Height="30px" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="B+Yell" Grid.Row="0" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="themeCard15" Height="45px" Width="45px" Grid.Column="14" Style="{StaticResource themeSelectorStyle}" Background="GreenYellow" BorderBrush="Black" Click="SetBYGrTheme">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15px" />
+                                <RowDefinition Height="30px" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="B+YGr" Grid.Row="0" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="themeCard16" Height="45px" Width="45px" Grid.Column="15" Style="{StaticResource themeSelectorStyle}" Background="Lime" BorderBrush="Black" Click="SetBGreTheme">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15px" />
+                                <RowDefinition Height="30px" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="B+Gre" Grid.Row="0" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="themeCard17" Height="45px" Width="45px" Grid.Column="16" Style="{StaticResource themeSelectorStyle}" Background="Aquamarine" BorderBrush="Black" Click="SetBAmarTheme">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15px" />
+                                <RowDefinition Height="30px" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="B+Ama" Grid.Row="0" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="themeCard18" Height="45px" Width="45px" Grid.Column="17" Style="{StaticResource themeSelectorStyle}" Background="Cyan" BorderBrush="Black" Click="SetBCyaTheme">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15px" />
+                                <RowDefinition Height="30px" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="B+Cya" Grid.Row="0" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="themeCard19" Height="45px" Width="45px" Grid.Column="18" Style="{StaticResource themeSelectorStyle}" Background="LightBlue" BorderBrush="Black" Click="SetBLBlTheme">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15px" />
+                                <RowDefinition Height="30" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="B+LBl" Grid.Row="0" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="themeCard20" Height="45px" Width="45px" Grid.Column="19" Style="{StaticResource themeSelectorStyle}" Background="Blue" BorderBrush="Black" Click="SetBBluTheme">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15px" />
+                                <RowDefinition Height="30px" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="B+Blue" Grid.Row="0" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="themeCard21" Height="45px" Width="45px" Grid.Column="20" Style="{StaticResource themeSelectorStyle}" Background="DarkOrchid" BorderBrush="Black" Click="SetBPurTheme">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15px" />
+                                <RowDefinition Height="30px" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="B+Pur" Grid.Row="0" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="themeCard22" Height="45px" Width="45px" Grid.Column="21" Style="{StaticResource themeSelectorStyle}" Background="Violet" BorderBrush="Black" Click="SetBPinTheme">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15px" />
+                                <RowDefinition Height="30px" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="B+Pink" Grid.Row="0" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Button>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+    </StackPanel>
+</UserControl>

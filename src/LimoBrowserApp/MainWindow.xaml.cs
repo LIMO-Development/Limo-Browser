@@ -37,7 +37,7 @@ namespace LimoBrowserApp
             switch (tabs.SelectedIndex == 0)
             {
                 case true:
-                    tabs.SelectedIndex = 2;
+                    tabs.SelectedIndex = 3;
                     break;
 
                 case false:
@@ -260,6 +260,25 @@ namespace LimoBrowserApp
             }
         }
 
+        public void AddSettingsTabToTabControl(object sender, RoutedEventArgs e)
+        {
+            TabItem newtab = new TabItem();
+            InnitSettingsTab tab = new InnitSettingsTab();
+            newtab.Content = tab;
+            newtab.Style = (Style)FindResource("settingstabStyle");
+            tabs.Items.Add(newtab);
+            switch (tabs.SelectedIndex == 0)
+            {
+                case true:
+                    tabs.SelectedIndex = 3;
+                    break;
+
+                case false:
+                    tabs.SelectedIndex = tabs.SelectedIndex + 1;
+                    break;
+            }
+        }
+
         public void RemoveTabFromTabControl(object sender, RoutedEventArgs e)
         {
             switch (tabs.SelectedIndex == 1 || tabs.SelectedIndex == 0)
@@ -271,12 +290,20 @@ namespace LimoBrowserApp
                     switch (tabs.SelectedIndex == 2)
                     {
                         case true:
-                            tabs.Items.RemoveAt(tabs.SelectedIndex);
-                            tabs.SelectedIndex = 0;
                             break;
 
                         case false:
-                            tabs.Items.RemoveAt(tabs.SelectedIndex);
+                            switch (tabs.SelectedIndex == 3)
+                            {
+                                case true:
+                                    tabs.Items.RemoveAt(tabs.SelectedIndex);
+                                    tabs.SelectedIndex = 0;
+                                    break;
+
+                                case false:
+                                    tabs.Items.RemoveAt(tabs.SelectedIndex);
+                                    break;
+                            }
                             break;
                     }
                     break;
